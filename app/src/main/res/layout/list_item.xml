@@ -2,31 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp">
+    android:layout_height="wrap_content"
+    android:minHeight="@dimen/list_item_height"
+    >
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+
+        android:layout_width="88dp"
+        android:layout_height="88dp"
         android:src="@mipmap/ic_launcher"
-        android:id="@+id/itemImage"/>
+        android:id="@+id/itemImage"
+        android:background="@color/tan_background"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88dp"
         android:orientation="vertical"
         android:paddingLeft="16dp"
+        android:id="@+id/listLinearLayout"
         >
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/miwokNumberTextView"
             tools:text="Latti"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:textStyle="bold"
+            android:layout_weight="1"
+            android:gravity="bottom"/>
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:id="@+id/englishNumbersTextView"
             tools:text="One"
-            android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
+            android:textColor="@android:color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_weight="1"
+            android:gravity="top"/>
     </LinearLayout>
 
 </LinearLayout>
