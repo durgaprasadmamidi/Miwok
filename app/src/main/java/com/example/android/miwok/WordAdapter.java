@@ -2,6 +2,7 @@ package com.example.android.miwok;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -27,11 +28,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     @NonNull
     @Override
-    public View getView(int position,  @Nullable View convertView,  @NonNull ViewGroup parent) {
+    public View getView(int position, @Nullable final View convertView, @NonNull ViewGroup parent) {
         View view = convertView;
         if(view == null){
             view = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
         }
+
         Word word = getItem(position);
         LinearLayout listLinearLayout =view.findViewById(R.id.listLinearLayout);
         listLinearLayout.setBackgroundResource(listColor);

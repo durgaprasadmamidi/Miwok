@@ -5,17 +5,25 @@ public class Word {
     private String defaultTranslation;
     private final int defaultResourceId = -1;
     private int resourceId=defaultResourceId;
+    private int soundId;
 
 
-    public Word(String miwokTranslation, String defaultTranslation, int resourceId) {
+    public Word(String miwokTranslation, String defaultTranslation, int resourceId,int soundId) {
         this.miwokTranslation = miwokTranslation;
         this.defaultTranslation = defaultTranslation;
         this.resourceId = resourceId;
+        this.soundId = soundId;
     }
 
-    public Word(String defaultTranslation, String miwokTranslation) {
+    public Word(String defaultTranslation, String miwokTranslation,int soundId) {
         this.miwokTranslation = miwokTranslation;
         this.defaultTranslation = defaultTranslation;
+        this.soundId = soundId;
+
+    }
+
+    public int getSoundId() {
+        return soundId;
     }
 
     public int getResourceId() {
