@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="@dimen/list_item_height"
-    >
+    android:layout_height="@dimen/list_item_height"
+    android:minHeight="@dimen/list_item_height">
+
     <ImageView
 
         android:layout_width="88dp"
         android:layout_height="88dp"
         android:src="@mipmap/ic_launcher"
         android:id="@+id/itemImage"
-        android:background="@color/tan_background"/>
+        android:background="@color/tan_background" />
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="88dp"
+        android:layout_height="@dimen/list_item_height"
         android:orientation="vertical"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
         android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:id="@+id/listLinearLayout"
-        >
+        android:layout_toRightOf="@+id/itemImage">
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -28,7 +34,8 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:textStyle="bold"
             android:layout_weight="1"
-            android:gravity="bottom"/>
+            android:gravity="bottom" />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -37,7 +44,16 @@
             android:textColor="@android:color/white"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"
             android:layout_weight="1"
-            android:gravity="top"/>
+            android:gravity="top" />
     </LinearLayout>
 
-</LinearLayout>
+    <ImageView
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_play_arrow" />
+
+
+</RelativeLayout>

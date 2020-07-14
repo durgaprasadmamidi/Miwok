@@ -21,7 +21,7 @@ public class WordAdapter extends ArrayAdapter<Word> {
 
     int listColor;
 
-    public WordAdapter(@NonNull Context context, int resource, @NonNull List objects,int listColor) {
+    public WordAdapter(@NonNull Context context, int resource, @NonNull List objects, int listColor) {
         super(context, resource, objects);
         this.listColor = listColor;
     }
@@ -30,12 +30,12 @@ public class WordAdapter extends ArrayAdapter<Word> {
     @Override
     public View getView(int position, @Nullable final View convertView, @NonNull ViewGroup parent) {
         View view = convertView;
-        if(view == null){
-            view = LayoutInflater.from(getContext()).inflate(R.layout.list_item,parent,false);
+        if (view == null) {
+            view = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
 
         Word word = getItem(position);
-        LinearLayout listLinearLayout =view.findViewById(R.id.listLinearLayout);
+        LinearLayout listLinearLayout = view.findViewById(R.id.listLinearLayout);
         listLinearLayout.setBackgroundResource(listColor);
         Log.i("debug", String.valueOf(listColor));
         Log.i("original", String.valueOf(R.color.category_numbers));
@@ -44,11 +44,10 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView miwokTextView = view.findViewById(R.id.miwokNumberTextView);
         miwokTextView.setText(word.getMiwokTranslation());
         ImageView imageView = view.findViewById(R.id.itemImage);
-        if(word.isImage()) {
+        if (word.isImage()) {
             imageView.setVisibility(View.VISIBLE);
             imageView.setImageResource(word.getResourceId());
-        }
-        else
+        } else
             imageView.setVisibility(View.GONE);
         return view;
 
